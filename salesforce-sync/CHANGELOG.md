@@ -221,7 +221,7 @@
   - lastSuccessTime
 - Removed cache storage of `ConfSFSync` record type configs, as sync log times are removed from the cache and dynamically fetched from the database.
 - Updated [cacheInit()] util function by removing the initialisation of sync (`ConfSFSync`) configs.
-- Updated [cacheSyncStatus()] util function by using database fetched sync times for comparison, instead of using (now removed) cached sync times.
+- Updated [cacheSyncStatus()] util function by using database-fetched sync times for comparison, instead of using (now removed) cached sync times.
 - Updated [cacheSyncStatus()] util function by removing the update logic for the (now removed) cached sync start time.
 - Updated [cacheSyncEnd()] util function by removing the update logic for the (now removed) cached sync success time.
 - Updated [cacheSyncEnd()] util function by removing the `success` status parameter, it is no longer being used to update the cached sync success time.
