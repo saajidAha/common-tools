@@ -84,7 +84,6 @@ type SalesforceResponseError record {
     string message;
 };
 
-// [Database record types]
 # [Database] Sync log time retrieval record.
 # 
 # + id - Database row ID
@@ -96,7 +95,6 @@ type DBSyncLogTimes record {|
     time:Utc end_time;
 |};
 
-// [Salesforce record types]
 # [Salesforce] Account sync query record.
 # 
 # + Id - Account ID
@@ -134,27 +132,27 @@ type SFAccountSyncRecord record {
 # + AccountId - Account ID
 # + CloseDate - Opportunity close date
 # + StageName - Opportunity stage
-# + Confidence__c - 
-# + Entry_Vector__c - 
-# + Primary_Partner_Role__c - 
-# + Renewal_Delayed__c - 
-# + ARR__c - 
-# + IAM_ARR__c - 
-# + APIM_ARR__c -
-# + Integration_ARR__c - 
-# + Open_Banking_ARR__c - 
-# + Delayed_ARR__c - 
-# + IAM_Delayed_ARR__c - 
-# + APIM_Delayed_ARR__c -
-# + Integration_Delayed__c - 
-# + Cloud_ARR_Opportunity__c - 
-# + IAM_BU_ARR_Opportunity__c - 
+# + Confidence__c - Confidence level
+# + Entry_Vector__c - Entry vector
+# + Primary_Partner_Role__c - Primary partner role
+# + Renewal_Delayed__c - Renewal delayed status
+# + ARR__c - Total ARR amount
+# + IAM_ARR__c - IAM ARR amount
+# + APIM_ARR__c - APIM ARR amount
+# + Integration_ARR__c - Integration ARR amount
+# + Open_Banking_ARR__c - Open Banking ARR amount
+# + Delayed_ARR__c - Delayed ARR amount
+# + IAM_Delayed_ARR__c - IAM Delayed ARR amount
+# + APIM_Delayed_ARR__c - APIM Delayed ARR amount
+# + Integration_Delayed__c - Integration Delayed ARR amount
+# + Cloud_ARR_Opportunity__c - Cloud ARR opportunity amount
+# + IAM_BU_ARR_Opportunity__c - IAM BU ARR opportunity amount
 # + APIM_ARR_Opportunity__c - APIM ARR opportunity amount
-# + Integration_BU_ARR_Opportunity__c - 
+# + Integration_BU_ARR_Opportunity__c - Integration BU ARR opportunity amount
 # + Choreo_ARR_Opportunity__c - Choreo ARR opportunity amount
-# + IAM_PSO__c -
+# + IAM_PSO__c - IAM PSO amount
 # + APIM_PSO__c - APIM PSO amount
-# + Integration_PSO__c - 
+# + Integration_PSO__c - Integration PSO amount
 # + Choreo_PSO__c -Choreo PSO amount
 # + Cloud_ARR__c - Cloud ARR amount
 # + IAM_Cloud_ARR__c - IAM cloud ARR amount
@@ -170,12 +168,12 @@ type SFAccountSyncRecord record {
 # + Subs_End_Date__c - Subscription End Date (including cloud fields)
 # + Direct_Channel__c - Direct Channel information
 # + Forecast_Type1__c - Forecast type
-# + CL_Start_Date_Roll_Up__c - 
-# + CL_End_Date_Roll_Up__c - 
-# + PS_Support_Account_Start_Date_Roll_Up__c - 
-# + PS_Support_Account_End_Date_Roll_Up__c - 
-# + PS_Start_Date_Roll_Up__c - 
-# + PS_End_Date_Roll_Up__c - 
+# + CL_Start_Date_Roll_Up__c - Cloud start date roll up date
+# + CL_End_Date_Roll_Up__c - Cloud end date roll up date
+# + PS_Support_Account_Start_Date_Roll_Up__c - PS support account start date roll up date
+# + PS_Support_Account_End_Date_Roll_Up__c - PS support account end date roll up date
+# + PS_Start_Date_Roll_Up__c - PS start date roll up date
+# + PS_End_Date_Roll_Up__c - PS end date roll up date
 # + Subscription_Start_Date__c - Subscription start date
 # + Subscription_End_Date__c - Subscription end date
 # + Owner - Account owner details

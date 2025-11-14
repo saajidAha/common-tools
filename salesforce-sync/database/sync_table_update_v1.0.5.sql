@@ -1,4 +1,4 @@
--- 26/01/2025 (v1.0.5)
+-- Updated 26/01/2025 (v1.0.5)
 
 TRUNCATE `salesforce_sync`.`sf_opportunity`;
 ALTER TABLE `salesforce_sync`.`sf_opportunity` 
