@@ -68,7 +68,7 @@ function checkSyncStatus(string syncObj) returns boolean|error {
     }
 }
 
-# Handle Salesforce response errors by extrating error details.
+# Handle Salesforce response errors by extracting error details.
 # 
 # + err - Salesforce response error
 # + return - Handled error object

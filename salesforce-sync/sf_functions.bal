@@ -43,7 +43,7 @@ final salesforce:Client salesforceEP = check new ({
 # Get Salesforce Account object records from Salesforce.
 # 
 # + syncConfig - Sync configuration containing the query string
-# + return - Account records
+# + return - Account records as an `SFAccountSyncRecord` array or, `error`
 function sfQueryAccount(SfSyncConf syncConfig) returns SFAccountSyncRecord[]|error {
     log:printDebug(string `Querying ${ACCOUNT} object on Salesforce...`);
     stream<SFAccountSyncRecord, error?>|error resultStream = check salesforceEP->query(syncConfig.soqlQuery);
@@ -63,7 +63,7 @@ function sfQueryAccount(SfSyncConf syncConfig) returns SFAccountSyncRecord[]|err
 # Get Salesforce Opportunity object records from Salesforce.
 # 
 # + syncConfig - Sync configuration containing the query string
-# + return - Opportunity records
+# + return - Opportunity records as an `SFOpportunitySyncRecord` array or, `error`
 function sfQueryOpportunity(SfSyncConf syncConfig) returns SFOpportunitySyncRecord[]|error {
     log:printDebug(string `Querying ${OPPORTUNITY} object on Salesforce...`);
     stream<SFOpportunitySyncRecord, error?>|error resultStream = check salesforceEP->query(syncConfig.soqlQuery);
