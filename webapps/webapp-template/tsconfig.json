@@ -41,9 +41,8 @@
       "@view/*": ["./src/view/*"],
       "@utils/*": ["./src/utils/*"],
       "@/types/*": ["./src/types/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
-
   "include": ["src", "src/**/*", "src/vite-env.d.ts"],
-  "types": ["vite/client"]
 }
