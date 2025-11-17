@@ -18,11 +18,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { useEffect, useMemo, useState } from "react";
 
+import ErrorHandler from "@component/common/ErrorHandler";
+import PreLoader from "@component/common/PreLoader";
 import Layout from "@layout/Layout";
 import NotFoundPage from "@layout/pages/404";
 import MaintenancePage from "@layout/pages/Maintenance";
-import ErrorHandler from "@component/common/ErrorHandler";
-import PreLoader from "@component/common/PreLoader";
 import { RootState, useAppSelector } from "@slices/store";
 
 import { getActiveRoutesV2, routes } from "../route";
@@ -33,17 +33,19 @@ const AppHandler = () => {
   );
 
   const auth = useAppSelector((state: RootState) => state.auth);
-  const appConfig = useAppSelector((state: RootState) => state.appConfig);
 
-  const router = useMemo(() => 
-    createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      errorElement: <NotFoundPage />,
-      children: getActiveRoutesV2(routes, auth.roles),
-    },
-  ]), [auth.roles])
+  const router = useMemo(
+    () =>
+      createBrowserRouter([
+        {
+          path: "/",
+          element: <Layout />,
+          errorElement: <NotFoundPage />,
+          children: getActiveRoutesV2(routes, auth.roles),
+        },
+      ]),
+    [auth.roles],
+  );
 
   useEffect(() => {
     if (auth.status === "loading") {
