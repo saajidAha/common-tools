@@ -142,6 +142,11 @@ const AppAuthProvider = (props: { children: React.ReactNode }) => {
   }, [state.isAuthenticated, state.isLoading]);
 
   const refreshToken = async (): Promise<{ accessToken: string }> => {  
+    if (state.isAuthenticated) {
+      const accessToken = await getIDToken();
+      return {accessToken}
+    }
+
     try {  
       await refreshAccessToken();  
       const accessToken = await getAccessToken();  
