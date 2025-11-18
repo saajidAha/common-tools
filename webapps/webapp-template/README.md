@@ -167,7 +167,7 @@ Now that requests are authenticated, we load the app’s core data, usually **in
 
 **4) Centralized status + error handling**
 
-Each slice tracks its own **loading/success/error** state and updates Redux. If something fails, our **`AppHandler.tsx`** handles it in one place (show a friendly message, retry, or redirect). That keeps error UX consistent across the app and stops one-off hacks from creeping into components. Mire about AppHandler.
+Each slice tracks its own **loading/success/error** state and updates Redux. If something fails, our **`AppHandler.tsx`** handles it in one place (show a friendly message, retry, or redirect). That keeps error UX consistent across the app and stops one-off hacks from creeping into components. More about AppHandler.
 
 ### Rendering: One Function, Four States
 
