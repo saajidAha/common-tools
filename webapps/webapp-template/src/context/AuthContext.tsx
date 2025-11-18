@@ -75,7 +75,6 @@ const AppAuthProvider = (props: { children: React.ReactNode }) => {
     getDecodedIDToken,
     getBasicUserInfo,
     refreshAccessToken,
-    isAuthenticated,
     getIDToken,
     trySignInSilently,
     getAccessToken,
