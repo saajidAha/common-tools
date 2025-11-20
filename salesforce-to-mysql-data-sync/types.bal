@@ -98,7 +98,6 @@ type SFAccountSyncRecord record {
     string? BillingCountry;
     # Shipping Country
     string? ShippingCountry;
-    # Sales region
     record {
         # Owner Email
         string Email;
