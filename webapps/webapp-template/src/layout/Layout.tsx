@@ -13,21 +13,20 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-
-import Header from "@layout/header";
-import Sidebar from "@layout/sidebar";
 import { Box, useTheme } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useSelector } from "react-redux";
-
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+
 import { Suspense, useCallback, useEffect, useState } from "react";
 
+import PreLoader from "@component/common/PreLoader";
+import { redirectUrl as savedRedirectUrl } from "@config/constant";
 import ConfirmationModalContextProvider from "@context/DialogContext";
+import Header from "@layout/header";
+import Sidebar from "@layout/sidebar";
 import { selectRoles } from "@slices/authSlice/auth";
 import { type RootState, useAppSelector } from "@slices/store";
-import PreLoader from "@component/common/PreLoader";
-import { redirectUrl as savedRedirectUrl } from "@config/constant";  
 
 export default function Layout() {
   const { enqueueSnackbar } = useSnackbar();
@@ -60,6 +59,8 @@ export default function Layout() {
     }
   }, [navigate]);
 
+  console.log("surface primary : ", theme.palette.surface.primary.active)
+
   return (
     <ConfirmationModalContextProvider>
       {/* Full screen container */}
@@ -69,13 +70,12 @@ export default function Layout() {
           flexDirection: "column",
           height: "100vh",
           width: "100vw",
-          backgroundColor: theme.palette.background.main,
+          // backgroundColor: "#000",
+          backgroundColor: theme.palette.surface.primary.active,
         }}
       >
         {/* Header */}
-        <Box sx={{ height: "3rem" }}>
-          <Header />
-        </Box>
+        <Header />
 
         {/* Main content container */}
         <Box sx={{ display: "flex", flex: 1, overflow: "hidden" }}>
@@ -94,13 +94,7 @@ export default function Layout() {
             sx={{
               flex: 1,
               height: "100%",
-              overflowY: "scroll",
-              color: theme.palette.textTokens[100],
               padding: theme.spacing(3),
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "150%",
-              letterSpacing: "-0.03em",
             }}
           >
             <Suspense fallback={<PreLoader isLoading message="Loading page data" />}>
