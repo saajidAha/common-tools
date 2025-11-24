@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 import { Box, Divider, Stack, Tooltip, Typography, useTheme } from "@mui/material";
-import { ChevronLeft, ChevronRight, DivideCircle, Moon, Sun } from "lucide-react";
+import { ChevronLeft, ChevronRight, Moon, Sun } from "lucide-react";
 
 import { useMemo, useState } from "react";
 

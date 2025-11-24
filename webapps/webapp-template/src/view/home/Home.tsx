@@ -17,7 +17,7 @@
 export default function NestedPage() {
   return (
     <div>
-      <div>Page Two</div>
+      <div>Home</div>
     </div>
   );
 }
