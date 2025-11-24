@@ -13,7 +13,6 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-import { useTheme } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
 import type { RouteDetail } from "@/types/types";
